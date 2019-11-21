@@ -1,0 +1,28 @@
+html, body {margin: 0; padding: 0;}
+dl, ul, ol, li {list-style: none; margin: 0; padding: 0;}
+th, td {vertical-align: middle !important;}
+
+/* .btn {border-radius: 0;} */
+.text-primary {color: #061e5f !important;}
+.form-group {margin-bottom: 0;}
+.pointer {cursor: pointer;}
+.justify-content-evenly {justify-content: space-evenly;}
+
+/* font-size */
+.f-05 {font-size: 0.5rem;}				/*  8px */
+.f-075 {font-size: 0.75rem;}			/* 12px */
+.f-0875 {font-size: 0.875rem;}		/* 14px */
+.f-1 {font-size: 1rem;}						/* 16px */
+.f-1125 {font-size: 1.125rem;}		/* 18px */
+.f-125 {font-size: 1.25rem;}			/* 20px */
+.f-15 {font-size: 1.5rem;}				/* 24px */
+.f-175 {font-size: 1.75rem;}			/* 28px */
+.f-2 {font-size: 2rem;}						/* 32px */
+.f-25 {font-size: 2.5rem;}				/* 40px */
+.f-3 {font-size: 3rem;}						/* 48px */
+
+.navi a {color: white; text-decoration: none;}
+.navi a:link {color: white; text-decoration: none;}
+.navi a:visited {color: white; text-decoration: none;}
+.navi a:hover {color: beige; text-decoration: none;}
+.navi a:active {color: white; text-decoration: none;}
