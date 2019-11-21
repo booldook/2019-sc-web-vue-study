@@ -29,12 +29,44 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PrdResult from './models/PrdResult.js';
+
+import SearchComponent from './components/SearchComponent.vue';
 
 export default {
 	name: 'app',
 	components: {
-		HelloWorld
+		'search-bar': SearchComponent,
+	},
+	data() {
+		return {
+			title: "Vue를 배워봅시다.",
+			isPrdView: true,
+			searchBarQuery: '',
+			isSubmit: false,
+		}
+	},
+	created() {
+		
+	},
+	methods: {
+		onTogglePrd(e) {
+			this.isPrdView = !this.isPrdView;
+		},
+		onSubmit(query) {
+			this.searchBarQuery = query;
+			this.searchResult();
+		},
+		onSearchReset() {
+			this.isSubmit = false;
+			this.items = [];
+		},
+		searchResult() {
+			PrdResult.list().then((result) => {
+				this.isSubmit = true;
+				this.items = result;
+			});
+		}
 	}
 }
 </script>
@@ -47,7 +79,6 @@ th, td {vertical-align: middle !important;}
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
 	color: #2c3e50;
 	margin-top: 60px;
 }
