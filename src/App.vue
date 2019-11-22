@@ -9,7 +9,6 @@
 			v-on:@submit="onSubmit" 
 			v-on:@reset="onSearchReset"></search-bar>
 			<prd-result 
-			v-bind:isView="isSubmit" 
 			v-bind:query="searchBarQuery"></prd-result>
 		</div>
 	</div>
@@ -29,7 +28,6 @@ export default {
 		return {
 			title: "Vue를 배워봅시다.",
 			searchBarQuery: '',
-			isSubmit: false,
 		}
 	},
 	created() {
@@ -37,12 +35,10 @@ export default {
 	},
 	methods: {
 		onSearchReset() {
-			this.isSubmit = false;
 			this.searchBarQuery = '';
 		},
 		onSubmit(query) {
 			this.searchBarQuery = query;
-			this.isSubmit = true;
 		},
 	}
 }

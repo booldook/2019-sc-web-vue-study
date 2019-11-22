@@ -5,7 +5,7 @@ let items = [
 ];
 
 export default {
-	list() {
+	list(query) {
 		return new Promise((resolve, reject) => {
 			resolve(items);
 		});

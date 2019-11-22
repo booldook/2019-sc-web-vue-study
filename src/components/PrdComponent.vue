@@ -3,10 +3,10 @@
 		<div class="mt-3">
 			<span class="f-125 text-primary">상품 리스트 보기</span>
 			<i class="fas fa-angle-down pointer" v-on:click="onTogglePrd"
-				v-bind:class="{'fa-angle-down': !isPrdView, 'fa-angle-up': isPrdView}"></i>
+				v-bind:class="{'fa-angle-down': !isShow, 'fa-angle-up': isShow}"></i>
 		</div>
 		<div class="prd-wrap my-3">
-			<ul class="prds d-flex justify-content-between" v-if="isPrdView">
+			<ul class="prds d-flex justify-content-between" v-if="isShow">
 				<li class="prd mb-5" style="flex: 32% 0 0;" v-for="item in items" v-bind:key="item.id">
 					<div><img v-bind:src="item.src" class="w-100"></div>
 					<div class="f-125 py-2">{{item.title}}</div>
@@ -18,33 +18,39 @@
 </template>
 
 <script>
-import PrdResult from './models/PrdResult.js';
+import PrdResult from '../models/PrdResult.js';
 
 export default {
-	props: ['isView', 'query'],
+	props: ['query'],
 	data() {
 		return {
-			isPrdView: false,
+			isShow: false,
+			isSubmit: false,
+			items: [],
 		}
 	},
 	watch: {
 		query(newVal, oldVal) {
-			prdSearch(newVal);
+			this.prdSearch();
 		}
 	},
 	methods: {
 		onTogglePrd(e) {
-			this.isPrdView = !this.isPrdView;
+			this.isShow = !this.isShow;
 		},
-		onSubmit(query) {
-			this.searchBarQuery = query;
-			this.searchResult();
-		},
-		searchResult() {
-			PrdResult.list().then((result) => {
-				this.isSubmit = true;
-				this.items = result;
-			});
+		prdSearch() {
+			if(this.query != "") {
+				PrdResult.list(this.query).then((result) => {
+					this.isSubmit = true;
+					this.isShow = true;
+					this.items = result;
+				});
+			}
+			else {
+				this.isSubmit = false;
+				this.isShow = false;
+				this.items = [];
+			}
 		}
 	}
 }
