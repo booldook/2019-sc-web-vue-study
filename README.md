@@ -55,6 +55,7 @@ npm i sequelize-cli
 npm i express-session
 npm i session-file-store
 npm i cookie-parser
+npm i method-override
 
 # 본 프로젝트에 설치한 모듈 및 미들웨어
 npm i express
@@ -62,4 +63,5 @@ npm i morgan
 npm i http-errors
 npm i mysql2
 npm i sequelize
+npm i method-override
 ~~~
