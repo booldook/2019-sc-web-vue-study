@@ -64,4 +64,21 @@ npm i http-errors
 npm i mysql2
 npm i sequelize
 npm i method-override
+
+
+# 본 프로젝트에 설치한 모듈 및 미들웨어
+# Vue에서 Pug를 사용하기 위한 방법
+npm i pug
+npm i pug-plain-loader
 ~~~
+~~~pug
+<template lang="pug">
+... 퍼그문법
+</template>
+~~~
+
+~~~bash
+# vue에서 bootstrap을 쓰는 방법
+npm i bootstrap-vue bootstrap
+~~~
+

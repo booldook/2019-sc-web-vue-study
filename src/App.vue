@@ -1,17 +1,14 @@
-<template>
-	<div id="app">
-		<div class="container">
-			<div class="jumbotron">
-				<h1>{{title}}</h1>
-			</div>
-			<search-bar 
-			v-bind:value="searchBarQuery" 
-			v-on:@submit="onSubmit" 
-			v-on:@reset="onSearchReset"></search-bar>
-			<prd-result 
-			v-bind:query="searchBarQuery"></prd-result>
-		</div>
-	</div>
+<template lang="pug">
+	#app
+		.container
+			.jumbotron
+				h1 {{title}}
+			search-bar(v-bind:value="searchBarQuery" v-on:@submit="onSubmit" v-on:@reset="onSearchReset")
+			prd-result(v-bind:query="searchBarQuery")
+			div.mt-3
+				b-button(v-b-modal.modal-1="") Launch demo modal
+				b-modal#modal-1(v-bind:title="modalTitle")
+					p.my-4 Hello from modal!
 </template>
 
 <script>
@@ -27,6 +24,7 @@ export default {
 	data() {
 		return {
 			title: "Vue를 배워봅시다.",
+			modalTitle: "모달창",
 			searchBarQuery: '',
 		}
 	},
