@@ -6,8 +6,10 @@ const { Product } = require('../model/Product');
 router.get("/", getPrd);
 
 /* Router CB */
-function getPrd(req, res) {
-	res.json({hello: "world"});
+async function getPrd(req, res) {
+	let result = await Product.findAll({order:[["id", "asc"]]});
+	res.header("Access-Control-Allow-Origin", "*");
+	res.json(result);
 }
 
 module.exports = router;
