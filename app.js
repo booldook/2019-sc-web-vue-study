@@ -9,14 +9,13 @@ app.listen(3000, () => {
 const path = require("path");
 const fs = require("fs");
 const morgan = require("morgan");
-const bodyParser = require("body-parser");
 const methodOverride = require('method-override');
 
 /* Express 설정 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 /* method-override 설정 */
 app.use(methodOverride('X-HTTP-Method'));

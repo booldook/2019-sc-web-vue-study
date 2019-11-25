@@ -1,0 +1,1 @@
+::1 - - [25/Nov/2019:01:30:09 +0000] "GET /%3C%=%20BASE_URL%20%%3Efavicon.ico HTTP/1.1" 404 179 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36"
