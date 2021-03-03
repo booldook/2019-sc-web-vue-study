@@ -16,7 +16,7 @@
     "method-override": "^3.0.0",
     "morgan": "^1.9.1",
     "mysql2": "^2.0.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "sequelize": "^5.21.2",
     "vue": "^2.6.10"
